@@ -1,0 +1,120 @@
+@font-face {
+    font-family: 'MyFont';
+    src: url('./resources/myFont.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(to bottom, black, blue);
+}
+
+.title, #player-board, #computer-board, .separator {
+    font-family: 'MyFont',serif;
+    border-radius: 10px;
+    border: 3px solid white;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    color: white;
+}
+
+.title {
+    top: 15%;
+    left: 50%;
+    font-size: 100px;
+    display: flex;
+    gap: 30px;
+    padding: 10px;
+}
+
+#player-board, #computer-board, .separator {
+    top: 60%;
+    padding: 3px;
+}
+
+#player-board, #computer-board, #init-board {
+    height: calc(0.25*100vw);
+    width: calc(0.25*100vw);
+    display: grid;
+    grid-template: repeat(10,1fr) / repeat(10,1fr);
+    background-color: lightslategray;
+}
+
+#player-board {
+    left: 25%;
+}
+
+#computer-board {
+    left: 75%;
+}
+
+.separator {
+    left: 50%;
+    height: calc(0.35*100vw);
+    border: none;
+    background-color: burlywood;
+}
+
+.computer-item, .grid-item  {
+    border: 1px solid #030303;
+    background: white;
+}
+
+.ship-item {
+    background-color: #1f2937;
+    border: 3px solid white;
+}
+
+.water-item {
+    background-color: lightblue;
+}
+
+.hit-item {
+    background-color: orangered;
+}
+
+.computer-item:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+dialog {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 10px;
+    border: 3px solid black;
+    background-color: #fde68a;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 50px;
+}
+
+dialog > button {
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 10px;
+    font-family: MyFont, serif;
+}
+
+::backdrop {
+    background-color: darkgray;
+    opacity: 0.8;
+}
+
+.dialog-text {
+    color: #1f2937;
+    font-size: 40px;
+    font-family: MyFont, serif;
+}
